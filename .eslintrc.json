@@ -32,7 +32,7 @@
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "radix": "off",
-    "properties": "always"
+    "camelcase": ["always", 2]
   },
   "extends": ["prettier"]
 }
