@@ -7,6 +7,9 @@
     "es6": true,
     "es2017": true
   },
+  "parserOptions": {
+    "ecmaVersion": 2018
+},
   "rules": {
     "no-undef-init": "error",
     "no-duplicate-case": "error",
@@ -33,6 +36,5 @@
     "semi": ["error", "always"],
     "radix": "off",
     "camelcase": [1]
-  },
-  "extends": ["prettier"]
+  }
 }
