@@ -4,11 +4,12 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
+    "seed": "node seeds/seed.js",
     "test": "npm run lint",
-"start": "node server.js",
-"lint": "eslint --quiet .",
-"fix": "eslint --fix .",
-"watch": "nodemon server.js"
+    "lint": "eslint --quiet .",
+    "fix": "eslint --fix .",
+    "watch": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
