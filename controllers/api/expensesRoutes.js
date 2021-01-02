@@ -3,7 +3,8 @@ const { Expense, User, Category } = require('../../models');
 
 router.get('/', async (req, res) => {
     const blogInfo = await Expense.findAll({
-        include: [{ model: User }, { model: Category }],
+        include: [{ model: User ,
+        attributes:['name']}],
     });
     return res.json(blogInfo);
 });
@@ -34,10 +35,6 @@ router.post('/', async (req, res) => {
     } catch (err) {
         res.status(400).json(err);
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 331b61abed86b626f4be2ca0c885972ea688579a
 });
 
 
