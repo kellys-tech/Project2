@@ -1,9 +1,10 @@
 const router = require('express').Router();
-const { Expense, User, Category } = require('../../models');
+const { Expense, User} = require('../../models');
 
 router.get('/', async (req, res) => {
     const blogInfo = await Expense.findAll({
-        include: [{ model: User }, { model: Category }],
+        include: [{ model: User ,
+        attributes:['name']}],
     });
     return res.json(blogInfo);
 });
