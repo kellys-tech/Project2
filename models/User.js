@@ -28,6 +28,10 @@ User.init(
         isEmail: true,
       },
     },
+    income:{
+      type:DataTypes.FLOAT,
+      allowNull:false,
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,

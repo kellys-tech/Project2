@@ -1,11 +1,13 @@
 const router = require('express').Router();
-const { Category } = require('../../models');
+const {
+  Category
+} = require('../../models');
 
-router.get('/', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const newCategory = await Category.create({
-      name:req.body.name,
-      description:req.body.description,
+      name: req.body.name,
+      description: req.body.description,
     });
 
     res.status(200).json(newCategory);
@@ -14,6 +16,15 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/',async (req, res) => {
+  try {
+const category = await Category.findAll();
+res.status.json(category);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+
+});
 router.delete('/:id', async (req, res) => {
   try {
     const categoryData = await Category.destroy({
@@ -23,7 +34,9 @@ router.delete('/:id', async (req, res) => {
     });
 
     if (!categoryData) {
-      res.status(404).json({ message: 'No category found with this id!' });
+      res.status(404).json({
+        message: 'No category found with this id!'
+      });
       return;
     }
 
