@@ -34,9 +34,11 @@ router.post('/', async (req, res) => {
     } catch (err) {
         res.status(400).json(err);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 331b61abed86b626f4be2ca0c885972ea688579a
 });
-
 
 
 module.exports = router;
