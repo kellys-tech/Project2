@@ -24,7 +24,7 @@ res.status.json(category);
     res.status(400).json(err);
   }
 
-})
+});
 router.delete('/:id', async (req, res) => {
   try {
     const categoryData = await Category.destroy({
