@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Expense, User, Category } = require('../../models');
+const { Expense, User} = require('../../models');
 
 router.get('/', async (req, res) => {
     const blogInfo = await Expense.findAll({
