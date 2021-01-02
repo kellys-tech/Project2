@@ -13,10 +13,10 @@ router.delete('/:id', async (req, res) => {
         const expenseData = await Expense.destroy({
             where: {
                 id: req.params.id,
-                user_id: req.params.id,
+                user_id: req.session.user_id,
             },
-        })
-        res.status(200).json(expenseData)
+        });
+        res.status(200).json(expenseData);
     } catch (err) {
         throw err;
     }
