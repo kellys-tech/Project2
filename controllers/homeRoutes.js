@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Category,Expense} = require('../models');
-const withAuth = require('../utils/withAuth')
+const withAuth = require('../utils/withAuth');
 router.get('/expenses',withAuth,async(req,res)=>{
 try{
     const allExpenses = await Expense.findAll({

@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
 router.get('/',async (req, res) => {
   try {
 const category = await Category.findAll();
-res.status.json(category);
+res.status(200).json(category);
   } catch (err) {
     res.status(400).json(err);
   }
