@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const { Category,Expense} = require('../models');
 const withAuth = require('../utils/withAuth');
+
+
+
 router.get('/expenses',withAuth,async(req,res)=>{
 try{
     const allExpenses = await Expense.findAll({
@@ -24,8 +27,27 @@ try{
     res.status(400).json(err);
     }
 });
+router.get('/expenses/category1',withAuth,async(req,res)=>{
+    try{
+        const category1 =await Expense.findAll({
+            where:{
+                category_id:1,
+                user_id:req.session.user_id
+            }
+        });
 
-router.get('/expensesTotal',withAuth,async(req,res)=>{
+        const listOfExpenses = category1.map(expense => expense.get({plain:true}));
+
+        res.render('category1',{
+            logged_in:req.session.logged_in,
+            listOfExpenses
+        });
+    } catch(err){
+        res.status(400).json(err);
+    }
+});
+
+router.get('/total',withAuth,async(req,res)=>{
     try{
         const allExpenses = await Expense.findAll({
             where:{
