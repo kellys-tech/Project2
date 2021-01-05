@@ -8,7 +8,25 @@ router.get('/', async (req, res) => {
     });
     return res.json(blogInfo);
 });
+router.get('/expenses/category1',async(req,res)=>{
+    try{
+        const category1 =await Expense.findAll({
+            where:{
+                category_id:1,
+                user_id:req.session.user_id
+            }
+        });
 
+        const listOfExpenses = category1.map(expense => expense.get({plain:true}));
+
+        res.render('category1',{
+            logged_in:req.session.logged_in,
+            listOfExpenses
+        });
+    } catch(err){
+        res.status(400).json(err);
+    }
+});
 router.delete('/:id', async (req, res) => {
     try {
         const expenseData = await Expense.destroy({
