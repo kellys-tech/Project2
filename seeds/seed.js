@@ -20,7 +20,7 @@ const seedDatabase = async () => {
         });
         for (const category of categoryData) {
             await Category.create({
-                ...comment,
+                ...category,
                 user_id: users[Math.floor(Math.random() * users.length)].id,
             });
         }
