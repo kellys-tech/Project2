@@ -53,23 +53,6 @@ router.get('/expensesTotal',withAuth,async(req,res)=>{
         }
     });
 
-const expensesArray = [{
-    name:'house',
-    description:'lend',
-    amount:4000,
-},{
-    name:'car',
-    description:'new car',
-    amount:388
-},{
-    name:'loan',
-    description:'sba',
-    amount:61
-}];
-    
-
-// console.log(expensesArray.reduce(,) => a + b, 0));
-
 
 
 module.exports = router;
