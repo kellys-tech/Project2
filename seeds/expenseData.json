@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Rent",
+        "description": "monthly rent",
+        "amount": 600
+    },
+    {
+        "name": "Phone",
+        "description": "Car Note",
+        "amount": 400
+    },
+    {
+        "name": "Internet",
+        "description": "Spectrum bill",
+        "amount": 75
+    },
+    {
+        "name": "Car",
+        "description": "car payment",
+        "amount": 75
+    }
+]

@@ -1,32 +1,29 @@
 const router = require('express').Router();
-const { Expense, User} = require('../../models');
+const { Expense} = require('../../models');
+var currentDate = new Date();
+var month = new Array();
+month[0] = 'January';
+month[1] = 'February';
+month[2] = 'March';
+month[3] = 'April';
+month[4] = 'May';
+month[5] = 'June';
+month[6] = 'July';
+month[7] = 'August';
+month[8] = 'September';
+month[9] = 'October';
+month[10] = 'November';
+month[11] = 'December';
+var currentMonth = month[currentDate.getMonth()];
 
-router.get('/', async (req, res) => {
-    const blogInfo = await Expense.findAll({
-        include: [{ model: User ,
-        attributes:['name']}],
-    });
-    return res.json(blogInfo);
-});
-router.get('/expenses/category1',async(req,res)=>{
-    try{
-        const category1 =await Expense.findAll({
-            where:{
-                category_id:1,
-                user_id:req.session.user_id
-            }
-        });
+// router.get('/', async (req, res) => {
+//     const expenseInfo = await Expense.findAll({
+//         include: [{ model: Category ,
+//         attributes:['name']}],
+//     });
+//     return res.json(expenseInfo);
+// });
 
-        const listOfExpenses = category1.map(expense => expense.get({plain:true}));
-
-        res.render('category1',{
-            logged_in:req.session.logged_in,
-            listOfExpenses
-        });
-    } catch(err){
-        res.status(400).json(err);
-    }
-});
 router.delete('/:id', async (req, res) => {
     try {
         const expenseData = await Expense.destroy({
@@ -46,6 +43,7 @@ router.post('/', async (req, res) => {
            name:req.body.name,
            description:req.body.description,
            amount: req.body.amount,
+           date_created: currentMonth,
            user_id: req.session.user_id,
            category_id:req.body.category_id
         });
