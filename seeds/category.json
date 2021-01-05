@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Rent/Mortgage",
+        "description": "amount paid for rent/ mortgage"
+    },
+    {
+        "name": "Phone",
+        "description": "amount paid for phone services"
+    },
+    {
+        "name": "Internet",
+        "description": "amount paid for internet services in home"
+    },
+    {
+        "name": "Car",
+        "description": "Car payment"
+    }
+]
