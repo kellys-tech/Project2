@@ -1,10 +1,10 @@
 const express = require('express');
-const session = require('express-session');
-const routes = require('./controllers');
+// const session = require('express-session');
+// const routes = require('./controllers');
 const exphbs = require('express-handlebars');
-const sequelize = require('./config/connection');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
-var path = require('path');
+// const sequelize = require('./config/connection');
+// const SequelizeStore = require('connect-session-sequelize')(session.Store);
+// var path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -19,14 +19,14 @@ const PORT = process.env.PORT || 3001;
 // };
 app.use(express.static('public'));
 // app.use(session(sess));
-app.engine('handlebars', exphbs({ defaultLayout: "main" }));
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({
   extended: true
 }));
 
-const notesPath = path.join(__dirname, 'views/layout/homepage.html');
+// const notesPath = path.join(__dirname, 'views/layout/homepage.html');
 
 
 
@@ -35,9 +35,9 @@ const notesPath = path.join(__dirname, 'views/layout/homepage.html');
 app.get('/dashboard', (req, res) => {
   //make sure data passed in an obj
   //console.log the obj so you can see what it looks like passing to the frontend
-  var obj={name:"hi"};
+  var obj={name:'hi'};
   console.log(obj)
-  res.render("dashboard", obj);
+  res.render('dashboard', obj);
   //res.sendFile(notesPath);
 });
 
