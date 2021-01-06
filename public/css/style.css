@@ -1,1 +1,27 @@
-/* page styles */
+.navbar {
+    background-color: rgba(27, 81, 182, 0.822)
+}
+
+main {
+    display: block;
+}
+
+body {
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+element.style {
+    left: 0px;
+    margin-left: 0px;
+    width: 100%;
+    min-width: 988px;
+    position: absolute;
+    top: 71px;
+    height: 598px;
+}
+
+//* .container {
+    background-color: tan
+}
+

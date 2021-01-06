@@ -21,9 +21,8 @@ Expense.init({
     type: DataTypes.STRING,
   },
   date_created: {
-    type: DataTypes.DATE,
+    type: DataTypes.INTEGER,
     allowNull: false,
-    defaultValue: DataTypes.NOW,
   },
   amount: {
     type: DataTypes.FLOAT,
