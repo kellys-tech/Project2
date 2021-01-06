@@ -14,7 +14,7 @@ month[8] = 'September';
 month[9] = 'October';
 month[10] = 'November';
 month[11] = 'December';
-var currentMonth = month[currentDate.getMonth()];
+var currentMonth = currentDate.getMonth();
 
 // router.get('/', async (req, res) => {
 //     const expenseInfo = await Expense.findAll({
