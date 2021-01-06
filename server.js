@@ -36,7 +36,7 @@ app.get('/dashboard', (req, res) => {
   //make sure data passed in an obj
   //console.log the obj so you can see what it looks like passing to the frontend
   var obj={name:'hi'};
-  console.log(obj)
+  console.log(obj);
   res.render('dashboard', obj);
   //res.sendFile(notesPath);
 });
