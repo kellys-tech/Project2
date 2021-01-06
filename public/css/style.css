@@ -1,5 +1,6 @@
 .navbar {
-    background-color: rgba(27, 81, 182, 0.822)
+    background-color: rgb(57, 55, 156);
+    font-color: tan;
 }
 
 main {
@@ -19,9 +20,5 @@ element.style {
     position: absolute;
     top: 71px;
     height: 598px;
-}
-
-//* .container {
-    background-color: tan
 }
 
