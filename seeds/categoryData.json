@@ -1,22 +1,18 @@
 [
     {
         "name": "Living Expenses",
-        "description": "homerelated expenses(rent,internet,phone,car",
-        "id": 1
+        "description": "homerelated expenses(rent,internet,phone,car)"
     },
     {
         "name": "Entertainment",
-        "description": "subscriptions, going out,personal",
-        "id": 2
+        "description": "subscriptions, going out,personal"
     },
     {
         "name": "Debt",
-        "description": "school, credit cards",
-        "id": 3
+        "description": "school, credit cards"
     },
     {
         "name": "Misc",
-        "description": "emergencies",
-        "id": 4
+        "description": "emergencies"
     }
 ]
