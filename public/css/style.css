@@ -1,6 +1,6 @@
 .navbar {
-    background-color: rgb(66, 64, 184);
-    font-color: rgb(236, 208, 172);
+    background-color: rgb(66, 64, 184) !important;
+    color: rgb(236, 208, 172) !important;
 }
 
 main {
