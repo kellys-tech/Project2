@@ -1,18 +1,18 @@
 [
     {
-        "name": "Rent/Mortgage",
-        "description": "amount paid for rent/ mortgage"
+        "name": "Living Expenses",
+        "description": "homerelated expenses(rent,internet,phone,car)"
     },
     {
-        "name": "Phone",
-        "description": "amount paid for phone services"
+        "name": "Entertainment",
+        "description": "subscriptions, going out,personal"
     },
     {
-        "name": "Internet",
-        "description": "amount paid for internet services in home"
+        "name": "Debt",
+        "description": "school, credit cards"
     },
     {
-        "name": "Car",
-        "description": "Car payment"
+        "name": "Misc",
+        "description": "emergencies"
     }
 ]

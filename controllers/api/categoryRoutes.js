@@ -18,32 +18,34 @@ router.post('/', async (req, res) => {
 
 router.get('/',async (req, res) => {
   try {
-const category = await Category.findAll();
-res.status(200).json(category);
+    const category = await Category.findAll();
+    res.status(200).json(category);
   } catch (err) {
     res.status(400).json(err);
   }
 
 });
-router.delete('/:id', async (req, res) => {
-  try {
-    const categoryData = await Category.destroy({
-      where: {
-        id: req.params.id,
-      },
-    });
 
-    if (!categoryData) {
-      res.status(404).json({
-        message: 'No category found with this id!'
-      });
-      return;
-    }
+// not for MVP
+// router.delete('/:id', async (req, res) => {
+//   try {
+//     const categoryData = await Category.destroy({
+//       where: {
+//         id: req.params.id,
+//       },
+//     });
 
-    res.status(200).json(projectData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     if (!categoryData) {
+//       res.status(404).json({
+//         message: 'No category found with this id!'
+//       });
+//       return;
+//     }
+
+//     res.status(200).json(projectData);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;
