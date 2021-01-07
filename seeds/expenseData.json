@@ -4,34 +4,34 @@
         "description": "monthly rent",
         "date_created": 0,
         "amount": 600,
-        "categoty_id": 1
+        "category_id": 1
     },
     {
         "name": "Phone",
         "description": "Car Note",
         "date_created": 1,
         "amount": 400,
-        "categoty_id": 1
+        "category_id": 1
     },
     {
         "name": "Internet",
         "description": "Spectrum bill",
         "date_created": 1,
         "amount": 75,
-        "categoty_id": 1
+        "category_id": 1
     },
     {
         "name": "Car",
         "description": "car payment",
         "date_created": 1,
         "amount": 75,
-        "categoty_id": 1
+        "category_id": 1
     },
     {
         "name": "Gym",
         "description": "gym membership",
         "date_created": 1,
         "amount": 49.99,
-        "categoty_id": 2
+        "category_id": 2
     }
 ]
