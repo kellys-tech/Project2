@@ -2,40 +2,19 @@ const router = require('express').Router();
 const { Category, Expense } = require('../models');
 const withAuth = require('../utils/withAuth');
 
-router.get('/', async (req, res) => {
-    try {
-        const expenseData = await Category.findAll({
-            include: [{
-                model: Expense,
-                attributes: ['name', 'description', 'amount', 'date_created', 'category_id'],
-            },
-            ],
-        });
-        const categories = expenseData.map((category) => category.get({ plain: true }));
-        //pass serializes data and sess into template
-        res.render('dashboard', {
-            categories,
-            // eslint-disable-next-line camelcase
-            logged_in: req.session.logged_in
-        });
-    } catch (err) {
-        res.status(500).json(err.message);
-    }
-});
 
 
 
-router.get('/expenses', async (req, res) => {
-    try {
-        const allExpenses = await Expense.findAll({
-            where: {
-                user_id: req.session.user_id
-            }, include: [{
-                model: Category,
-                attributes: ['name']
-            }]
-        });
-
+router.get('/',async(req,res)=>{
+try{
+    const allExpenses = await Expense.findAll({include:[{
+        model:Category,
+        attributes:['name']
+    }],
+        where:{
+            user_id:req.session.user_id
+        }
+    });
         let expensesArray = allExpenses.map((expense) => expense.get({ plain: true }));
         console.log(expensesArray);
         res.json(expensesArray);

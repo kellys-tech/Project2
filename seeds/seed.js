@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 const sequelize = require('../config/connection');
 const { Expense, Category, User } = require('../models');
 
@@ -7,27 +6,26 @@ const expenseData = require('./expenseData.json');
 const categoryData = require('./categoryData.json');
 
 const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
+    await sequelize.sync({ force: true });
 
-  const users = await User.bulkCreate(userData, {
-    individualHooks: true,
-    returning: true,
-  });
-
-  for (const expense of expenseData) {
-    await Expense.create({
-      ...expense,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
+    const users = await User.bulkCreate(userData, {
+        individualHooks: true,
+        returning: true,
     });
     for (const category of categoryData) {
-      await Category.create({
-        ...category,
-        user_id: users[Math.floor(Math.random() * users.length)].id,
-      });
+        await Category.create({
+            ...category,
+            user_id: users[Math.floor(Math.random() * users.length)].id,
+        });
     }
-  }
+    for (const expense of expenseData) {
+        await Expense.create({
+            ...expense,
+            user_id: users[Math.floor(Math.random() * users.length)].id,
+        });
+    }
 
-  process.exit(0);
+    process.exit(0);
 };
 
 seedDatabase();
