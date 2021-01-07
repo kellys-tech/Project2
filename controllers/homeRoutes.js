@@ -4,15 +4,15 @@ const withAuth = require('../utils/withAuth');
 
 
 
-router.get('/expenses',withAuth,async(req,res)=>{
+router.get('/',async(req,res)=>{
 try{
-    const allExpenses = await Expense.findAll({
+    const allExpenses = await Expense.findAll({include:[{
+        model:Category,
+        attributes:['name']
+    }],
         where:{
             user_id:req.session.user_id
-        },include:[{
-            model:Category,
-            attributes:['name']
-        }]
+        }
     });
 
     let expensesArray = allExpenses.map((expense)=> expense.get({plain:true}));

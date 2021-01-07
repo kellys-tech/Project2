@@ -12,18 +12,17 @@ const seedDatabase = async () => {
         individualHooks: true,
         returning: true,
     });
-
+    for (const category of categoryData) {
+        await Category.create({
+            ...category,
+            user_id: users[Math.floor(Math.random() * users.length)].id,
+        });
+    }
     for (const expense of expenseData) {
         await Expense.create({
             ...expense,
             user_id: users[Math.floor(Math.random() * users.length)].id,
         });
-        for (const category of categoryData) {
-            await Category.create({
-                ...category,
-                user_id: users[Math.floor(Math.random() * users.length)].id,
-            });
-        }
     }
 
     process.exit(0);

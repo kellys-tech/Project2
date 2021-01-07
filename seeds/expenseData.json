@@ -3,12 +3,14 @@
         "name": "Rent",
         "description": "monthly rent",
         "date_created":0,
+        "category_id":1,
         "amount": 600
     },
     {
         "name": "Phone",
         "description": "Car Note",
         "date_created":1,
+        "category_id":3,
       "amount": 400
 
     },
@@ -16,12 +18,14 @@
         "name": "Internet",
         "description": "Spectrum bill",
         "date_created":1,
+        "category_id":2,
         "amount": 75
     },
     {
         "name": "Car",
         "description": "car payment",
         "date_created":1,
+        "category_id":1,
         "amount": 75
     }
 ]
