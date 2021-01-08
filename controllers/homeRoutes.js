@@ -5,11 +5,11 @@ const withAuth = require('../utils/withAuth');
 
 
 
-router.get('/',async(req,res)=>{
+router.get('/',withAuth,async(req,res)=>{
 try{
     const allExpenses = await Expense.findAll({include:[{
         model:Category,
-        attributes:['name']
+        attributes:['id','name']
     }],
         where:{
             user_id:req.session.user_id
@@ -17,11 +17,11 @@ try{
     });
         let expensesArray = allExpenses.map((expense) => expense.get({ plain: true }));
         console.log(expensesArray);
-        res.json(expensesArray);
-        // res.render('home',{
-        //     logged_in:req.session.logged_in,
-        //     expensesArray
-        // });
+        // res.json(expensesArray);
+        res.render('dashboard',{
+            logged_in:req.session.logged_in,
+            expensesArray
+        });
     } catch (err) {
         res.status(400).json(err);
     }
@@ -90,10 +90,10 @@ router.get('/total', withAuth, async (req, res) => {
         const totalExpenses = expensesArray.map((expense) => expense.amount);
         const total = totalExpenses.reduce((a, b) => a + b);
         res.json(total);
-        // res.render('total',{
-        //     logged_in:req.session.logged_in,
-        //     totalExpenses
-        // });
+        res.render('total',{
+            logged_in:req.session.logged_in,
+            totalExpenses
+        });
     } catch (err) {
         res.status(400).json(err);
     }
