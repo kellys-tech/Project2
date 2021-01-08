@@ -101,6 +101,33 @@ router.get('/total', withAuth, async (req, res) => {
     }
 });
 
+router.get('/total/:id', withAuth, async (req, res) => {
+    try {
+        const allExpenses = await Expense.findAll({
+            where: {
+                user_id: req.session.user_id,
+                category_id:req.params.id
+            }, include: [{
+                model: Category,
+                attributes: ['name']
+            }]
+        });
+
+        let expensesArray = allExpenses.map((expense) => expense.get({ plain: true }));
+
+        const totalExpenses = expensesArray.map((expense) => expense.amount);
+
+        const total = totalExpenses.reduce((a, b) => a + b, 0);
+        res.json(total);
+        // res.render('total',{
+        //     logged_in:req.session.logged_in,
+        //    total
+        // });
+    } catch (err) {
+        res.status(400).json(err.message);
+    }
+});
+
 //login route
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
