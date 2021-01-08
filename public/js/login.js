@@ -1,50 +1,67 @@
-const loginFormHandler = async (event) => {
-  event.preventDefault();
-  // Collect values from the login form
-  const email = document.querySelector('#inputEmail').value.trim();
-  const password = document.querySelector('#inputPassword').value.trim();
-  if (email && password) {
-    // Send a POST request to the API endpoint
-    const response = await fetch('/api/users/login', {
-      method: 'POST',
-      body: JSON.stringify({ email, password }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-    if (response.ok) {
-      document.location.replace('/');
-    } else {
-      alert(response.statusText);
-    }
+const submitBtn = $('#login-btn');
+const userInput = $('#inputEmail');
+const pass = $('#inputPassword');
+
+function login(){
+
+  const userData = {
+    email: userInput.val(),
+    password: pass.val()
+  };
+
+  if(!userInput.val()){
+    alert('Incorrect email or password, please try again');
   }
-};
-
-const signupFormHandler = async (event) => {
-  event.preventDefault();
-
-  const name = document.querySelector('#name-signup').value.trim();
-  const email = document.querySelector('#email-signup').value.trim();
-  const income = document.querySelector('#income-signup').value.trim();
-  const password = document.querySelector('#password-signup').value.trim();
-
-  if (name && email && password) {
-    const response = await fetch('/api/users', {
-      method: 'POST',
-      body: JSON.stringify({ name, email, income,password }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-
-    if (response.ok) {
-      document.location.replace('/');
-    } else {
-      alert(response.statusText);
-    }
+  if(!pass.val()){
+    alert('Incorrect email or password, please try again');
   }
-};
+  console.log(userData);
+  $.post('/api/users/login',userData).then(()=>{
+    document.location.href='/';
+  });
+}
 
-document
-  .querySelector('.login-form')
-  .addEventListener('click', loginFormHandler);
 
-document
-  .querySelector('.signup-form')
-  .addEventListener('click', signupFormHandler);
+submitBtn.on('click',(e)=>{
+  e.preventDefault();
+  login();
+
+});
+//sign up
+const name = $('#name-signup');
+const email = $('#email-signup');
+const password = $('#password-signup');
+const income = $('#income-signup');
+
+function signUp(){
+
+  const newUser = {
+    name:name.val(),
+    email: email.val(),
+    income:parseInt(income.val()),
+    password:password.val(),
+  };
+  if(!email.val()){
+    alert('email is needed to sign up');
+    return;
+  }
+  if(!password.val()){
+    alert('password is needed to sign up');
+    return;
+  }
+  console.log(JSON.stringify(newUser));
+  $.post('/api/users/sign-up',newUser).then((res)=>{
+
+    alert('User has been created');
+    console.log(res);
+
+  }).catch((err)=>{
+    throw err.message ;
+  });
+}
+
+$('#signup-btn').on('click',(e)=>{
+  e.preventDefault();
+
+  signUp();
+});
