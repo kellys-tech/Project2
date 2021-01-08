@@ -17,11 +17,13 @@ var chart = new Chart(ctx, {
   options: {
     cutoutPercentage: 0,
     color: [
-      'green',    // color for data at index 0
-      'blue',   // color for data at index 1
-      'red',  // color for data at index 2
-      'orange',  // color for data at index 3
+      'green', // color for data at index 0
+      'blue', // color for data at index 1
+      'red', // color for data at index 2
+      'orange', // color for data at index 3
       //...
     ]
   }
 });
+
+chart();
