@@ -106,7 +106,7 @@ router.get('/total/:id', withAuth, async (req, res) => {
         const allExpenses = await Expense.findAll({
             where: {
                 user_id: req.session.user_id,
-                category_id:req.params.id
+                id:req.params.id
             }, include: [{
                 model: Category,
                 attributes: ['name']
@@ -143,4 +143,13 @@ router.get('/sign-up', (req, res) => {
     }
     res.render('signup');
 });
+
+router.get('/add', (req, res) => {
+    try{
+    res.render('addExpense');
+} catch(err){
+res.status(400).json(err.message);
+}
+});
+
 module.exports = router;

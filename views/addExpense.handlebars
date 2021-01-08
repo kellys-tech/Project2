@@ -1,6 +1,5 @@
- <link href="/public/css/style.css" rel="stylesheet">
 
-<body>
+
 
 <h2>Add Expense</h2>
 <div>
@@ -8,31 +7,31 @@
     <form class="form signup-form">
       <div class="form-group">
         <label for="name-signup">Expense Name</label>
-        <input class="form-input" type="text" id="name-signup" />
+        <input class="form-input" type="text" id="name" />
       </div>
       <div class="form-group">
         <label for="email-signup">Amount</label>
-        <input class="form-input" type="text" id="email-signup" />
+        <input class="form-input" type="text" id="amount" />
       </div>
       <div class="form-group">
-        <label for="email-signup">Descrption</label>
-        <input class="form-input" type="text" id="email-signup" />
+        <label for="email-signup">Description</label>
+        <input class="form-input" type="text" id="description" />
       </div>
       <div class="form-group">
-        <button class="btn btn-primary" type="submit">Submit</button>
-      </div>
-    </form>
-  </div>
-  <p>
-    <select id="select1">
+       <p>
+    <select id="category">
       <option value="1">Living Expenses</option>
       <option value="2">Entertainment</option>
       <option value="3">Debt</option>
       <option value="4">Misc.</option>
     </select>
   </p>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit" id="submit-btn">Submit</button>
+      </div>
+    </form>
+  </div>
 </div>
 
-<script src="./js/addExpense.js"></script>
-
-</body>
+<script src="/js/addExpense.js"></script>
