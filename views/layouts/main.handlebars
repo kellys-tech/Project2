@@ -26,24 +26,24 @@
     aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="/">MyTechBlog</a>
+  <a class="navbar-brand" href="/">My Budget Buddy</a>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <a class="nav-link" href="/post">ADD EXPENSE</a>
+        <a class="nav-link" href="/post">Add Expense</a>
       </li>
       {{#if logged_in}}
       <li class="nav-item">
-        <a class="nav-link" href="/">DASHBOARD</a></li>
+        <a class="nav-link" href="/">Dashboard</a></li>
       <li class="nav-item">
-        <a class="nav-link" id="logout">logout</a>
+        <a class="nav-link" id="logout">Logout</a>
       </li>
 
       </li>
       {{else}}
       <li class="nav-item">
-        <a class="nav-link" href="/login">login</a>
+        <a class="nav-link" href="/login">Login</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/sign-up">Sign-up</a>
@@ -54,19 +54,8 @@
 </nav>
 
 <body class="text-center">
-  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <header class="masthead mb-auto">
-      <div class="inner">
-        <h3 class="masthead-brand">Your personal finance friend</h3>
-        <nav class="nav nav-masthead justify-content-center">
-          <a class="nav-link active" href="#">Your Budget Buddy</a>
-
-      </div>
     </header>
     <main role="main" class="inner cover">
-      <img src="/images/HandHouseMoney.jpg" alt="Hand holding house and money">
-      <h1 class="cover-heading">Your Budget Buddy.</h1>
-      <p class="lead">Your personal finance friend.</p>
       {{{ body }}}
     </main>
     <footer class="mastfoot mt-auto">
