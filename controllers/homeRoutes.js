@@ -23,7 +23,7 @@ try{
             expensesArray
         });
     } catch (err) {
-        res.status(400).json(err);
+        res.status(400).json(err.message);
     }
 });
 
@@ -47,7 +47,7 @@ router.get('/expenses/category/:id', withAuth, async (req, res) => {
         //     listOfExpenses
         // });
     } catch (err) {
-        res.status(400).json(err);
+        res.status(400).json(err.message);
     }
 });
 router.get('/expenses/month/:id', withAuth, async (req, res) => {
@@ -70,7 +70,7 @@ router.get('/expenses/month/:id', withAuth, async (req, res) => {
         //     listOfExpenses
         // });
     } catch (err) {
-        res.status(400).json(err);
+        res.status(400).json(err.message);
     }
 });
 
@@ -88,14 +88,15 @@ router.get('/total', withAuth, async (req, res) => {
         let expensesArray = allExpenses.map((expense) => expense.get({ plain: true }));
 
         const totalExpenses = expensesArray.map((expense) => expense.amount);
-        const total = totalExpenses.reduce((a, b) => a + b);
-        res.json(total);
-        res.render('total',{
-            logged_in:req.session.logged_in,
-            totalExpenses
-        });
+
+        const total = totalExpenses.reduce((a, b) => a + b,0);
+       res.json(total);
+        // res.render('total',{
+        //     logged_in:req.session.logged_in,
+        //    total
+        // });
     } catch (err) {
-        res.status(400).json(err);
+        res.status(400).json(err.message);
     }
 });
 
