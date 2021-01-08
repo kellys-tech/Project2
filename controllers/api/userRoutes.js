@@ -48,6 +48,7 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', (req, res) => {
+  console.log(err.message);
   if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
@@ -57,22 +58,22 @@ router.post('/logout', (req, res) => {
   }
 });
 
-router.put('/update',async(req,res)=>{
-try{
-  const userData = await User.update(req.body, {
-    where: {
+router.put('/update', async (req, res) => {
+  try {
+    const userData = await User.update(req.body, {
+      where: {
         id: req.params.id,
-    },
-    individualHooks: true,
-});
-if (!userData[0]) {
-    res.status(404).json({ message: 'No user with this id!' });
-    return;
-}
-res.status(200).json(userData);
-  } catch(err){
-  res.status(400).json(err);
-}
+      },
+      individualHooks: true,
+    });
+    if (!userData[0]) {
+      res.status(404).json({ message: 'No user with this id!' });
+      return;
+    }
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
 module.exports = router;

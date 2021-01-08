@@ -1,17 +1,17 @@
-    <!-- Custom styles for this template -->
-  
-   
+<!-- Custom styles for this template -->
+
+
 <main class="form-signin">
 
-  <div class= "row">
-    <div class= "col-md-6">
-          <h1 class="logoText">Your Budget Buddy</h1>
-        <p class="lead">Your personal finance friend.</p>
-        {{name}}
-        <img src="/images/HandHouseMoney.jpg" alt="Hand holding house and money">
-     </div>
-     
-    <div class= "col-md-6">
+  <div class="row">
+    <div class="col-md-6">
+      <h1 class="logoText">Your Budget Buddy</h1>
+      <p class="lead">Your personal finance friend.</p>
+      {{name}}
+      <img src="/images/HandHouseMoney.jpg" alt="Hand holding house and money">
+    </div>
+
+    <div class="col-md-6">
       <form>
         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
         <label for="inputEmail" class="visually-hidden">Email address</label>
@@ -19,38 +19,21 @@
         <label for="inputPassword" class="visually-hidden">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
         <div class="checkbox mb-3">
-        <label>
-        <input type="checkbox" value="remember-me"> Remember me
-        </label>
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
         </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-        <button class="w-100 btn btn-lg btn-success" type="submit">Sign Up</button>
+        <div class="login-form">
+          <button class="w-100 btn btn-lg btn-primary " type="submit">Sign in</button>
+        </div>
+        <div class="signup-form">
+          <button class="w-100 btn btn-lg btn-success" type="submit"><a href="/signup">Sign Up</a></button>
+        </div>
       </form>
-     </div>
+    </div>
 
   </div>
 </main>
-<h2>Signup</h2>
-<div>
-  <div>
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
-      </div>
-      <div class="form-group">
-        <label for="email-signup">email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-    </form>
-  </div>
-</div>
+
 
 <script src="/js/login.js"></script>
