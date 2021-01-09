@@ -106,7 +106,7 @@ router.get('/total/:id', withAuth, async (req, res) => {
         const allExpenses = await Expense.findAll({
             where: {
                 user_id: req.session.user_id,
-                id: req.params.id
+                category_id: req.params.id
             }, include: [{
                 model: Category,
                 attributes: ['name']
