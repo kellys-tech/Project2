@@ -15,7 +15,6 @@ function login(){
   if(!pass.val()){
     alert('Incorrect email or password, please try again');
   }
-  console.log(userData);
   $.post('/api/users/login',userData).then(()=>{
     document.location.href='/';
   });
@@ -49,11 +48,9 @@ function signUp(){
     alert('password is needed to sign up');
     return;
   }
-  console.log(JSON.stringify(newUser));
-  $.post('/api/users/sign-up',newUser).then((res)=>{
+  $.post('/api/users/sign-up',newUser).then(()=>{
 
     alert('User has been created');
-    console.log(res);
 
   }).catch((err)=>{
     throw err.message ;
