@@ -17,6 +17,8 @@ function login(){
   }
   $.post('/api/users/login',userData).then(()=>{
     document.location.href='/';
+  }).fail(()=>{
+    alert('Incorrect email or password, please try again');
   });
 }
 
