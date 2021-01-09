@@ -1,5 +1,5 @@
 
-<div class="col-4">
+<div class="col-md-4 col-sm-12">
     <canvas id="myChart" width="800" height="800" style="display: block; width: 800px; height: 800px;"
         class="chartjs-render-monitor"></canvas>
 
@@ -28,10 +28,11 @@
         </main>
 
 </div>
-
+<h1 id="total"></h1>
 <!-- Loop over each object in the projects array -->
 {{#each expensesArray as |expense| }}
   <div class="expense card col-mb-4 expense d-inline-flex p-2" style="width: 25rem; ">
+        <div class="transbox">
         <div class="col-md-6 card-title">
             <h2>
                 <!-- Call helper function with triple brackets to render the emoji span as HTML -->
@@ -54,7 +55,8 @@
             </p>
 
         </div>
-
+        </div>
+</div>
         {{/each}}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>

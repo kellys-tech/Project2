@@ -30,7 +30,16 @@ const arrayOfEx = [living,entertaiment,debt,misc];
     }
   });
 };
+const getTotal = async() => {
 
+  const total = await $.get('/total');
+console.log(total);
+$('#total').text(`Total Expenses:${total}💲`);
+
+};
+
+
+getTotal();
 
 getData();
 
