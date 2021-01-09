@@ -144,7 +144,7 @@ router.get('/sign-up', (req, res) => {
     res.render('signup');
 });
 
-router.get('/add', (req, res) => {
+router.get('/add', withAuth, (req, res) => {
     try {
         res.render('addExpense', { logged_in: req.session.logged_in });
     } catch (err) {
