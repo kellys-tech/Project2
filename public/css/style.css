@@ -26,4 +26,9 @@ element.style {
 footer {
     background-color: rgb(66, 64, 184) !important;
     color: rgb(236, 208, 172) !important;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
