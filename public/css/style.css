@@ -1,5 +1,5 @@
 .navbar {
-    background-color: rgb(66, 64, 184) !important;
+    background-color: rgb(27, 114, 196) !important;
     color: rgb(236, 208, 172) !important;
 }
 
@@ -23,12 +23,20 @@ element.style {
     height: 598px;
 }
 
+
+.card-body {
+    color:  rgb(27, 114, 196) !important;
+    background-color: rgb(224, 224, 224) !important;
+}
+
+.card-header {
+    color:  rgb(27, 114, 196) !important;
+    font-size: 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 2px 2px 5px green;
+}
+
 footer {
-    background-color: rgb(66, 64, 184) !important;
-    color: rgb(236, 208, 172) !important;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+    background-color: rgb(27, 114, 196);
+    color:rgb(236, 208, 172)
 }
