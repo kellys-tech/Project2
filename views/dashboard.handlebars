@@ -1,5 +1,5 @@
 <canvas id="myChart" width="800" height="800" style="display: block; width: 800px; height: 800px;"
-        class="chartjs-render-monitor"></canvas>
+    class="chartjs-render-monitor"></canvas>
 
     <main role="main" class="inner cover">
         <main role="main" class="inner cover">
@@ -13,44 +13,49 @@
             </div>
         </main>
         <main role="main" class="inner cover">
-        <main role="main" class="inner cover">
-            <div class="chartjs-size-monitor">
-                <div class="chart-size-monitor-expand">
-                    <div class></div>
+            <main role="main" class="inner cover">
+                <div class="chartjs-size-monitor">
+                    <div class="chart-size-monitor-expand">
+                        <div class></div>
+                    </div>
+                    <div class="chartjs-size-monitor-shrink">
+                        <div class></div>
+                    </div>
                 </div>
-                <div class="chartjs-size-monitor-shrink">
-                    <div class></div>
-                </div>
-            </div>
+            </main>
         </main>
-    </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-    <script src="script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+        <script src="script.js"></script>
 
-    <!-- Loop over each object in the projects array -->
-    {{#each expensesArray as |expense| }}
-    <div class="row mb-4 expense">
-        <div class="col-md-5">
-            <h2>
-                <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-                {{expense.name}}
-            </h2>
-            <p>
-                <span for="img" aria-label="money">💲</span>
-                <!-- Pass needed_funding value to the helper function -->
-                <span class="dollar-amount">{{expense.amount}}</span>
-                needed!
-            </p>
-            <p>Category:{{category.name}}</p>
+        <!-- Loop over each object in the projects array -->
+        {{#each expensesArray as |expense| }}
+        <div class="card col-mb-4 expense d-inline-flex p-2" style="width: 25rem;">
+            <div class="col-md-5">
+                <h2>
+                    <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+                    {{expense.name}}
+                </h2>
+                <p>
+                    <span for="img" aria-label="money">💲</span>
+                    <!-- Pass needed_funding value to the helper function -->
+                    <span class="dollar-amount">{{expense.amount}}</span>
+
+                </p>
+                <p>Category: {{category.name}}</p>
+            </div>
+            <div class="col-md-7">
+                <p>Description: {{expense.description}}
+                </p>
+            </div>
         </div>
-        <div class="col-md-7">
-            <p>
-                {{expense.description}}
-            </p>
-        </div>
+
+        {{/each}}
+</body>
+
     </div>
     {{/each}}
+
 
 
 <script src="/js/chart.js"></script>
