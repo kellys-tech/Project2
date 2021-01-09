@@ -1,8 +1,11 @@
 .navbar {
-    background-color: rgb(66, 64, 184) !important;
+    background-color: rgb(27, 114, 196);
     color: rgb(236, 208, 172) !important;
+    width: 100%;
 }
-
+.container {
+    margin: 2rem;
+}
 .nav-link {
     color:rgb(236, 208, 172)
 }
@@ -10,11 +13,13 @@
 body {
     font-size: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: tan;
+    background-color:white;
 }
 
 .card {
     display:inline-block;
+    border:solid 2px black;
+    
 }
 .expense {
 margin: 0.5rem;
@@ -42,3 +47,7 @@ footer {
     text-shadow: 2px 2px 5px green;
 }
 
+/* body{
+    background-image: url('../images/LookAtTheBudget.jpg');
+    opacity: 10%;
+} */
