@@ -51,7 +51,8 @@ function signUp(){
   $.post('/api/users/sign-up',newUser).then(()=>{
 
     alert('User has been created');
-document.location.href = '/';
+
+    document.location.href = '/';
   }).catch((err)=>{
     throw err.message ;
   });
