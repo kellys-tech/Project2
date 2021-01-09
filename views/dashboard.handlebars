@@ -31,7 +31,7 @@
 
         <!-- Loop over each object in the projects array -->
         {{#each expensesArray as |expense| }}
-        <div class="row mb-4 expense">
+        <div class="card col-mb-4 expense d-inline-flex p-2" style="width: 25rem;">
             <div class="col-md-5">
                 <h2>
                     <!-- Call helper function with triple brackets to render the emoji span as HTML -->
@@ -41,13 +41,12 @@
                     <span for="img" aria-label="money">💲</span>
                     <!-- Pass needed_funding value to the helper function -->
                     <span class="dollar-amount">{{expense.amount}}</span>
-                    needed!
+
                 </p>
-                <p>Category:{{category.name}}</p>
+                <p>Category: {{category.name}}</p>
             </div>
             <div class="col-md-7">
-                <p>
-                    {{expense.description}}
+                <p>Description: {{expense.description}}
                 </p>
             </div>
         </div>
