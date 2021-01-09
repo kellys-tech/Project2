@@ -3,9 +3,9 @@
     color: rgb(236, 208, 172) !important;
 }
 
-main {
+/* main {
     display: block;
-}
+} */
 
 body {
     font-size: 10px;
@@ -13,7 +13,7 @@ body {
     background-color: tan;
 }
 
-element.style {
+/* element.style {
     left: 0px;
     margin-left: 0px;
     width: 100%;
@@ -21,8 +21,13 @@ element.style {
     position: absolute;
     top: 71px;
     height: 598px;
+} */
+.card {
+    display:inline-block;
 }
-
+.expense {
+margin: 0.5rem;
+}
 footer {
     background-color: rgb(66, 64, 184) !important;
     color: rgb(236, 208, 172) !important;
