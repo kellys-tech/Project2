@@ -1,5 +1,7 @@
-<canvas id="myChart" width="800" height="800" style="display: block; width: 800px; height: 800px;"
-    class="chartjs-render-monitor"></canvas>
+
+<div class="col-4">
+    <canvas id="myChart" width="800" height="800" style="display: block; width: 800px; height: 800px;"
+        class="chartjs-render-monitor"></canvas>
 
     <main role="main" class="inner cover">
         <main role="main" class="inner cover">
@@ -25,37 +27,41 @@
             </main>
         </main>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-        <script src="script.js"></script>
+</div>
 
-        <!-- Loop over each object in the projects array -->
-        {{#each expensesArray as |expense| }}
-        <div class="card col-mb-4 expense d-inline-flex p-2" style="width: 25rem;">
-            <div class="col-md-5">
-                <h2>
-                    <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-                    {{expense.name}}
-                </h2>
-                <p>
-                    <span for="img" aria-label="money">💲</span>
-                    <!-- Pass needed_funding value to the helper function -->
-                    <span class="dollar-amount">{{expense.amount}}</span>
+<!-- Loop over each object in the projects array -->
+{{#each expensesArray as |expense| }}
+  <div class="expense card col-mb-4 expense d-inline-flex p-2" style="width: 25rem; ">
+        <div class="col-md-6 card-title">
+            <h2>
+                <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+                {{expense.name}}
+            </h2>
+        </div>
+        <div class="card-text">
+            <p><span for="img" aria-label="money">💲</span>
+                <!-- Pass needed_funding value to the helper function -->
+                <span class="dollar-amount">{{expense.amount}}</span>
+            </p>
+            <p>Category: {{category.name}}</p>
+        </div>
+        <div class="col-md-7 card-text">
+            <p>Description: {{#if expense.description}}
+            {{expense.description}}
+            {{else}}
+            N/A
+            {{/if}}
+            </p>
 
-                </p>
-                <p>Category: {{category.name}}</p>
-            </div>
-            <div class="col-md-7">
-                <p>Description: {{expense.description}}
-                </p>
-            </div>
         </div>
 
         {{/each}}
 </body>
 
     </div>
-    {{/each}}
+{{/each}}
+ 
 
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script src="script.js"></script>
 <script src="/js/chart.js"></script>
