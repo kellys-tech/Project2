@@ -3,7 +3,9 @@
     color: rgb(236, 208, 172) !important;
 }
 
-
+.nav-link {
+    color:rgb(236, 208, 172)
+}
 
 body {
     font-size: 10px;
@@ -18,8 +20,8 @@ body {
 margin: 0.5rem;
 }
 footer {
-    background-color: rgb(66, 64, 184) !important;
-    color: rgb(236, 208, 172) !important;
+    background-color: rgb(27, 114, 196);
+    color:rgb(236, 208, 172);
     position: fixed;
     left: 0;
     bottom: 0;
@@ -38,11 +40,5 @@ footer {
     font-size: 60px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-shadow: 2px 2px 5px green;
-}
-
-
-footer {
-    background-color: rgb(27, 114, 196);
-    color:rgb(236, 208, 172)
 }
 
