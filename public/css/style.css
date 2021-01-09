@@ -26,3 +26,23 @@ footer {
     width: 100%;
     text-align: center;
 }
+
+
+.card-body {
+    color:  rgb(27, 114, 196) !important;
+    background-color: rgb(224, 224, 224) !important;
+}
+
+.card-header {
+    color:  rgb(27, 114, 196) !important;
+    font-size: 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 2px 2px 5px green;
+}
+
+
+footer {
+    background-color: rgb(27, 114, 196);
+    color:rgb(236, 208, 172)
+}
+
