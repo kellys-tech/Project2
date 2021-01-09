@@ -3,6 +3,14 @@
     color: rgb(236, 208, 172) !important;
 }
 
+.nav-link {
+    color:rgb(236, 208, 172)
+}
+
+.navbar-brand {
+    color:rgb(236, 208, 172)
+}
+
 main {
     display: block;
 }
@@ -40,3 +48,4 @@ footer {
     background-color: rgb(27, 114, 196);
     color:rgb(236, 208, 172)
 }
+
