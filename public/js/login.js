@@ -52,6 +52,7 @@ function signUp(){
 
     alert('User has been created');
 
+    document.location.href = '/';
   }).catch((err)=>{
     throw err.message ;
   });
