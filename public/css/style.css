@@ -1,29 +1,9 @@
 .navbar {
-    background-color: rgb(27, 114, 196) !important;
+    background-color: rgb(66, 64, 184) !important;
     color: rgb(236, 208, 172) !important;
 }
 
-.nav-link {
 
-    color:rgb(236, 208, 172)
-}
-
-.navbar-brand {
-    color:rgb(236, 208, 172)
-}
-
-main {
-    display: block;
-
-    color: rgb(236, 208, 172) !important;
-}
-
-.navbar-brand {
-    color: rgb(236, 208, 172) !important;
-
-/* main {
-    display: block;
-} */
 
 body {
     font-size: 10px;
@@ -31,22 +11,21 @@ body {
     background-color: tan;
 }
 
-/* element.style {
-    left: 0px;
-    margin-left: 0px;
-    width: 100%;
-    min-width: 988px;
-    position: absolute;
-    top: 71px;
-    height: 598px;
-} */
 .card {
     display:inline-block;
 }
 .expense {
 margin: 0.5rem;
 }
-
+footer {
+    background-color: rgb(66, 64, 184) !important;
+    color: rgb(236, 208, 172) !important;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
 
 
 .card-body {
